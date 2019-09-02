@@ -1,0 +1,35 @@
+import sys
+from nltk.tree import Tree
+import os
+
+inputFile = sys.argv[1]
+outputFile = sys.argv[2]
+
+def doparse(inputFile, outputFile):
+    # prefix
+    text = ''
+    with open(inputFile) as f:
+        text = f.read()
+
+    text = text.replace(',',' ,')
+    text = text.replace('.',' .')
+    text = text.replace(':',' :')
+    text = text.replace('!',' ,')
+    text = text.replace('?',' ,')
+
+    with open('temp.txt', 'w') as f:
+        f.write(text)
+    
+
+    os.system('java -jar BerkeleyParser-1.7.jar -gr icegrammar.grammar -inputFile temp.txt -outputFile {}.ps0'.format(outputFile[:-4]))
+
+    # postfix
+    with open('{}.ps0'.format(outputFile[:-4])) as f:
+        text = f.read()
+        text = text.replace('*','-')
+
+
+    with open(outputFile, 'w') as f:
+        f.write(text)
+    
+doparse(inputFile, outputFile)

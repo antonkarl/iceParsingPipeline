@@ -1,0 +1,11 @@
+CS="java -classpath ./cs/CS_2.002.75.jar csearch/CorpusSearch"
+
+tempfile="temp.psd"
+cp -f $1.psd $tempfile
+
+echo ""
+echo "Two subjects"
+$CS cs/donothing.q $tempfile
+mv -f $tempfile.out $tempfile
+
+mv -f $tempfile $1.pretty.psd
