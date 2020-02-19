@@ -11,6 +11,8 @@
 # -- package detectormorse (pip3 install detectormorse)
 # java
 # -- package tokenizer (pip3 install tokenizer)
+# GNU sed (brew install gnu-sed) for macOS
+#
 
 
 inputFile=$1
