@@ -11,6 +11,8 @@
 # -- package detectormorse (pip3 install detectormorse)
 # java
 # -- package tokenizer (pip3 install tokenizer)
+# Cython (pip3 install cython)
+# numpy (pip3 isntall numpy)
 # GNU sed (brew install gnu-sed) for macOS
 #
 
