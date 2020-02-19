@@ -1,9 +1,11 @@
 # iceParsingPipeline
 
-Pipeline to parse plain text files using the Berkeley parser
-and a model trained on IcePaHC.
+Pipelines to parse plain text files using either the Berkeley neural 
+parser or the Berkeley parser. Both models are trained on IcePaHC.
 
-Usage: ./runall.sh inputfile.txt textOutputfile.txt outputfile.psd
+Usage for the neural pipeline: ./runallNeural.sh inputfile.txt textOutputfile.txt outputfile.psd
+
+Usage for the previous pipeline: ./runall.sh inputfile.txt textOutputfile.txt outputfile.psd
 
 file1: plain text input
 
@@ -19,5 +21,11 @@ python3
 -- package detectormorse (pip3 install detectormorse)
 
 java
+
+Additional dependencies needed for the neural parsing pipeline:
+
+-- package tokenizer (pip3 install tokenizer)
+
+GNU sed (brew install gnu-sed) for macOS
 
 
