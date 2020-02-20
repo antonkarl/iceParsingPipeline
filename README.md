@@ -30,6 +30,3 @@ Cython (pip3 install cython)
 
 numpy (pip3 install numpy)
 
-GNU sed (brew install gnu-sed) for macOS
-
-

@@ -1,4 +1,4 @@
 # Removes extra labels and brackets in parsed output
 
-gsed -i 's/^(TOP //g' $1
-gsed -i 's/)$//g' $1
+sed -i 's/^(TOP\s//g' $1
+sed -i 's/)$//g' $1
