@@ -46,7 +46,7 @@ mv $tempfile $txtOutputFile
 echo 'Running Berkeley Neural Parser (this may take a while)'
 python3 ./tools/neuralParser/src/main.py parse --model-path-base ./tools/neuralParser/models/_dev=83.54.pt --input-path $txtOutputFile --output-path $temppsd
 
-# STEP 5: Restore dashes in phrase labels and tags and remove extra labels and brackets
+# STEP 5: Restore dashes in phrase labels and tags and remove extra labels
 python3 ./tools/scripts/postprocess.py $temppsd $temppsd.dashed
 ./tools/scripts/postprocessNeural.sh $temppsd.dashed
 mv -f $temppsd.dashed $temppsd
