@@ -43,8 +43,8 @@ mv -f $tempfile.out $tempfile
 # Save txt output file (fully tokenized but not parsed)
 mv $tempfile $txtOutputFile
 
-# STEP 4: Run Berkeley Parser
-echo 'Running Berkeley Parser (this may take a while)'
+# STEP 4: Run Berkeley Neural Parser
+echo 'Running Berkeley Neural Parser (this may take a while)'
 python3 ./tools/neuralParser/src/main.py parse --model-path-base ./tools/neuralParser/models/_dev=83.54.pt --input-path $txtOutputFile --output-path $temppsd
 
 # STEP 5: Restore dashes in phrase labels and tags and remove extra labels and brackets
