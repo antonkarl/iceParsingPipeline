@@ -57,7 +57,7 @@ mv -f $temppsd.dashed $temppsd
 # nothing but reformat the output.
 echo 'Formatting output'
 ./tools/cs/formatpsd.sh $temppsd $temppsd.pretty
-#mv -f $temppsd.pretty $temppsd
+mv -f $temppsd.pretty $temppsd
 
 # STEP 7:  Saving output file
 echo 'Saving output file'
