@@ -3,4 +3,4 @@
 sed -i 's/^(TOP\s/(/g' $1
 
 # The GNU sed equivalent
-#sed -i 's/^(TOP\s/(/g' $1
+#gsed -i 's/^(TOP\s/(/g' $1
