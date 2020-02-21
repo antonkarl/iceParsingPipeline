@@ -1,7 +1,8 @@
 # iceParsingPipeline
 
-Pipelines to parse plain text files using either the Berkeley neural 
-parser or the Berkeley parser. Both models are trained on IcePaHC.
+Pipelines to parse plain text files using either the Berkeley neural parser or the Berkeley parser. Both models are trained on IcePaHC.
+
+The two pipelines and the Berkeley neural parser are licensed under the MIT license while the Berkeley parser is licensed under GPLv2.
 
 ### Using the neural pipeline
 
