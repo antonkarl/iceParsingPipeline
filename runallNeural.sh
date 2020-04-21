@@ -34,31 +34,26 @@ tokenize $1 > $tempfile
 echo 'Splitting matrix clauses.'
 python3 ./tools/splitter/splitter.py ./tools/splitter/iceconj.gz $tempfile > $tempfile.out
 mv -f $tempfile.out $tempfile
-
-# STEP 3: Preprocessing for Parser (adjust whitespace)
-echo 'Preparing input for Berkeley parser (adjusting whitespace)'
-python3 ./tools/scripts/preprocess.py $tempfile $tempfile.out
-mv -f $tempfile.out $tempfile
 # Save txt output file (fully tokenized but not parsed)
 mv $tempfile $txtOutputFile
 
-# STEP 4: Run Berkeley Neural Parser
+# STEP 3: Run Berkeley Neural Parser
 echo 'Running Berkeley Neural Parser (this may take a while)'
 python3 ./tools/neuralParser/src/main.py parse --model-path-base ./tools/neuralParser/_dev=84.91.pt --input-path $txtOutputFile --output-path $temppsd
 
-# STEP 5: Restore dashes in phrase labels and tags and remove extra labels
+# STEP 4: Restore dashes in phrase labels and tags and remove extra labels
 python3 ./tools/scripts/postprocess.py $temppsd $temppsd.dashed
 ./tools/scripts/postprocessNeural.sh $temppsd.dashed
 mv -f $temppsd.dashed $temppsd
 
-# STEP 6: Make output pretty
+# STEP 5: Make output pretty
 # This runs a structure changing CorpusSearch query that does
 # nothing but reformat the output.
 echo 'Formatting output'
 ./tools/cs/formatpsd.sh $temppsd $temppsd.pretty
 mv -f $temppsd.pretty $temppsd
 
-# STEP 7:  Saving output file
+# STEP 6:  Saving output file
 echo 'Saving output file'
 mv -f $temppsd $outputFile
 
