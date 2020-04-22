@@ -12,7 +12,7 @@
 # java
 # -- package tokenizer (pip3 install tokenizer)
 # Cython (pip3 install cython)
-# numpy (pip3 isntall numpy)
+# numpy (pip3 install numpy)
 #
 
 
