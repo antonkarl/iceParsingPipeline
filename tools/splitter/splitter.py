@@ -72,7 +72,7 @@ class IceTags():
 
 
     def load_wordtags(self):
-        with open('wordtags.tsv') as f:
+        with open('tools/splitter/wordtags.tsv') as f:
             wordtags = dict()
             lines = f.read().splitlines()
             for line in lines:
@@ -101,7 +101,7 @@ class TreeSplitter(JSONable):
             text = text.replace(',', ' ,')
             text = text.replace(':', ' :')
             text = text.replace('.', ' .')
-            self.fit(text, epochs)
+            #self.fit(text, epochs)
 
     def __repr__(self):
         return "{}(classifier={!r})".format(self.__class__.__name__,
@@ -260,7 +260,7 @@ class TreeSplitter(JSONable):
 #
 #ts = TreeSplitter()
 
-tsplitter = TreeSplitter.load(sys.argv[1])
+tsplitter = TreeSplitter(sys.argv[1])
 output = "\n".join(tsplitter.segments(slurp(sys.argv[2])))
 output = re.sub(r'\n+','\n',output).strip()
 print(output)
