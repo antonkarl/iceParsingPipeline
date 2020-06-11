@@ -6,7 +6,7 @@ The two pipelines and the Berkeley neural parser are licensed under the MIT lice
 
 ### Using the neural pipeline
 
-Download the parsing model from (https://notendur.hi.is/~antoni/ltdata/) and save under the [/tools/neuralParser/](https://github.com/antonkarl/iceParsingPipeline/tree/master/tools/neuralParser) directory. Make sure not to change the name of the model. Run the command:
+Download the parsing model from [here](https://notendur.hi.is/~antoni/ltdata/) and save under the [/tools/neuralParser/](https://github.com/antonkarl/iceParsingPipeline/tree/master/tools/neuralParser) directory. Make sure not to change the name of the model. Run the command:
 
 ```
 $ ./runallNeural.sh inputfile.txt textOutputfile.txt outputfile.psd
