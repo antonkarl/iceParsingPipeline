@@ -49,5 +49,7 @@ Cython (pip3 install cython)
 
 numpy (pip3 install numpy)
 
+PyTorch version 0.4.1 or 1.0/1.1 (pip3 install torch==1.1.0 torchvision==0.3.0)
+
 pytorch-pretrained-bert (pip3 install pytorch-pretrained-bert)
 
