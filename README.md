@@ -4,6 +4,10 @@ Pipelines to parse plain text files using either the Berkeley neural parser or t
 
 The two pipelines and the Berkeley neural parser are licensed under the MIT license while the Berkeley parser is licensed under GPLv2.
 
+### Setting up the pipeline
+
+The pipeline requires both Python 3.6>= and Java. Once both programs have been installed, the rest of the dependencies can be installed. Run ```./setup.sh``` to install all necessary dependencies. All dependencies are listed below.
+
 ### Using the neural pipeline
 
 Download the parsing model from [here](https://notendur.hi.is/~antoni/ltdata/_dev=84.91.pt) (2.2 GB) and save under the [/tools/neuralParser/](https://github.com/antonkarl/iceParsingPipeline/tree/master/tools/neuralParser) directory. Make sure not to change the name of the model. Run the command:
